@@ -47,6 +47,44 @@ ExportedObj/
 *.opendb
 *.VC.db
 
+# 빌드 결과물 무시
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# 캐시 및 중간 파일 무시
+.gradle/
+.vs/
+.consulo/
+.gradle/
+
+# 불필요한 메타 파일 무시
+*.meta
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# 크기가 큰 자원 파일을 LFS로 관리
+*.png
+*.jpg
+*.mp3
+*.asset
+# 필요에 따라 다른 확장자 추가
+
+# Ignore .mat, .fbx, .prefab, .bmp, .exr files
+*.mat
+*.fbx
+*.prefab
+*.bmp
+*.exr
+*.tga
+*.anim
+*.psd
+*.terrainlayer
+*.unity
+*.obj
+
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
