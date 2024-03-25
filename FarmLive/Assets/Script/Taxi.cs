@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class Taxi : MonoBehaviour
 {
-    public GameObject taxibtn; 
+    public GameObject taxibtn; // 버튼 3개 담는 것
     public GameObject Player; 
 
-    public Button Home_button; 
-    public Button Shop_button; 
-    public Button Office_button; 
+    public Button Home_button; // 집 이동 버튼
+    public Button Shop_button;  // 트럭 쪽 이동 버튼
+    public Button Office_button;  // 사무소 이동 버튼
 
     void Start()
     {
