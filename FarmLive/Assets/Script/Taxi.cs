@@ -35,18 +35,18 @@ public class Taxi : MonoBehaviour
         }
     }
 
-    public void Button1Clicked()    // 
+    public void Button1Clicked()    // Áý ÁÂÇ¥
     {
-        Player.transform.position = new Vector3(8.1f, -0.4f, -45f);
+        Player.transform.position = new Vector3(39.6f, 0f, -176f);
     }
 
-    public void Button2Clicked()    
+    public void Button2Clicked()    // Æ®·° °Å·¡ ÁÂÇ¥
     {
-        Player.transform.position = new Vector3(-93f, -0.4f, -140f);
+        Player.transform.position = new Vector3(-171f, 0f, -6f);
     }
 
-    public void Button3Clicked()    
+    public void Button3Clicked()    // ÁÖ¹Î¼¾ÅÍ
     {
-        Player.transform.position = new Vector3(-184f, -0.4f, -184f);
+        Player.transform.position = new Vector3(116f, 0f, 29f);
     }
 }
