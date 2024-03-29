@@ -1,7 +1,6 @@
 # FarmLive
 
 오늘 대략적으로 할것
- - 미니맵 에셋 https://assetstore.unity.com/packages/3d/characters/dragndrop-minimap-radar-91675#content
  - 기능들을 구현 순서를 정해보자.
  - 기본 UI 화면 제작
 
