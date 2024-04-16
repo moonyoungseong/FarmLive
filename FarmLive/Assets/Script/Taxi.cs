@@ -19,7 +19,7 @@ public class Taxi : MonoBehaviour
         Office_button.onClick.AddListener(Button3Clicked);
     }
 
-    private void OnCollisionEnter(Collision collision) 
+    private void OnCollisionEnter(Collision collision)  // ≈√Ω√ø° ¥Í¿Ω
     {
         if (collision.gameObject.CompareTag("Player")) 
         {
@@ -27,7 +27,7 @@ public class Taxi : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision) 
+    private void OnCollisionExit(Collision collision) // ≈√Ω√ø°º≠ ∂≥æÓ¡¸
     {
         if (collision.gameObject.CompareTag("Player")) 
         {
