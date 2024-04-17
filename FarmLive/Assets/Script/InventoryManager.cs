@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 [System.Serializable] // 직렬화로 인스펙터 창에서도 보이게
 public class Item   // 아이템 클래스
@@ -26,5 +27,13 @@ public class InventoryManager : MonoBehaviour
             string[] row = line[i].Split('\t');
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4], row[5] == "TRUE"));
         }
+
+        Save();
+    }
+
+    void Save()
+    {
+        print(Application.dataPath);
+        //File.WriteAllText(Application.dataPath + "/Resources/MyItemText.txt", "하이");
     }
 }
