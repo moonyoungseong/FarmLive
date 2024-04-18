@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using Newtonsoft.Json;
 
 [System.Serializable] // 직렬화로 인스펙터 창에서도 보이게
 public class Item   // 아이템 클래스
@@ -33,7 +34,8 @@ public class InventoryManager : MonoBehaviour
 
     void Save()
     {
-        print(Application.dataPath);
-        //File.WriteAllText(Application.dataPath + "/Resources/MyItemText.txt", "하이");
+        string jdata = JsonConvert.SerializeObject(AllItemList);
+        print(jdata);
+        File.WriteAllText(Application.dataPath + "/Resources/MyItemText.txt", jdata);
     }
 }
