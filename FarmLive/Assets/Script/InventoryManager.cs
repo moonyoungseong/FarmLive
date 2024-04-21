@@ -29,7 +29,7 @@ public class InventoryManager : MonoBehaviour
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4], row[5] == "TRUE"));
         }
 
-        Save();
+        Load();
     }
 
     void Save()
@@ -37,5 +37,11 @@ public class InventoryManager : MonoBehaviour
         string jdata = JsonConvert.SerializeObject(AllItemList);
         print(jdata);
         File.WriteAllText(Application.dataPath + "/Resources/MyItemText.txt", jdata);
+    }
+    
+    void Load()
+    {
+        string jdata = File.ReadAllText(Application.dataPath + "/Resources/MyItemText.txt");
+        MyItemList = JsonConvert.DeserializeObject<List<Item>>(jdata);
     }
 }
