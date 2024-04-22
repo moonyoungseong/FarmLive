@@ -17,7 +17,8 @@ public class Item   // 아이템 클래스
 public class InventoryManager : MonoBehaviour
 {
     public TextAsset ItemDatabase;  // 메모장 아이템
-    public List<Item> AllItemList, MyItemList;
+    public List<Item> AllItemList, MyItemList, CurItemList;
+    public string curType = "Seed";
 
     void Start()
     {
@@ -32,7 +33,14 @@ public class InventoryManager : MonoBehaviour
         Load();
     }
 
-    void Save()
+    public void TabClick(string tabName)
+    {
+        curType = tabName;
+        CurItemList = MyItemList.FindAll(x => x.Type == tabName);
+    }
+
+
+        void Save()
     {
         string jdata = JsonConvert.SerializeObject(AllItemList);
         print(jdata);
