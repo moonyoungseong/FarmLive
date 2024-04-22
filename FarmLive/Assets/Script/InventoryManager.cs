@@ -19,6 +19,7 @@ public class InventoryManager : MonoBehaviour
     public TextAsset ItemDatabase;  // 메모장 아이템
     public List<Item> AllItemList, MyItemList, CurItemList;
     public string curType = "Seed";
+    public GameObject[] Slot;
 
     void Start()
     {
@@ -37,6 +38,11 @@ public class InventoryManager : MonoBehaviour
     {
         curType = tabName;
         CurItemList = MyItemList.FindAll(x => x.Type == tabName);
+
+        for (int i = 0; i < Slot.Length; i++)
+        {
+            Slot[i].SetActive(i < CurItemList.Count);
+        }
     }
 
 
@@ -51,5 +57,7 @@ public class InventoryManager : MonoBehaviour
     {
         string jdata = File.ReadAllText(Application.dataPath + "/Resources/MyItemText.txt");
         MyItemList = JsonConvert.DeserializeObject<List<Item>>(jdata);
+
+        TabClick(curType);
     }
 }
