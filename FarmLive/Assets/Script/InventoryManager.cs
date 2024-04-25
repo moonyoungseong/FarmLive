@@ -18,8 +18,8 @@ public class InventoryManager : MonoBehaviour
 {
     public TextAsset ItemDatabase;  // 메모장 아이템
     public List<Item> AllItemList, MyItemList, CurItemList;
-    public string curType = "Seed";
-    public GameObject[] Slot;
+    public string curType = "Seed"; // 아이템 구분
+    public GameObject[] Slot;   // 슬롯 할당
 
     void Start()
     {
