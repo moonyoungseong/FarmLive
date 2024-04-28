@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
+using UnityEngine.UI;
 
 [System.Serializable] // 직렬화로 인스펙터 창에서도 보이게
 public class Item   // 아이템 클래스
@@ -42,11 +43,12 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < Slot.Length; i++)
         {
             Slot[i].SetActive(i < CurItemList.Count);
+            Slot[i].GetComponentInChildren<Text>().text = i < CurItemList.Count ? CurItemList[i].Name : "";
         }
     }
 
 
-        void Save()
+    void Save()
     {
         string jdata = JsonConvert.SerializeObject(AllItemList);
         print(jdata);
