@@ -51,7 +51,6 @@ public class InventoryManager : MonoBehaviour
     void Save()
     {
         string jdata = JsonConvert.SerializeObject(AllItemList);
-        print(jdata);
         File.WriteAllText(Application.dataPath + "/Resources/MyItemText.txt", jdata);
     }
     
