@@ -21,6 +21,8 @@ public class InventoryManager : MonoBehaviour
     public List<Item> AllItemList, MyItemList, CurItemList;
     public string curType = "Seed"; // 아이템 구분
     public GameObject[] Slot;   // 슬롯 할당
+    public Image[] ItemImage;   // 슬롯에 이미지 칸
+    public Sprite[] ItemSprite; // 아이템 이미지
 
     void Start()
     {
@@ -42,8 +44,15 @@ public class InventoryManager : MonoBehaviour
 
         for (int i = 0; i < Slot.Length; i++)
         {
-            Slot[i].SetActive(i < CurItemList.Count);
-            Slot[i].GetComponentInChildren<Text>().text = i < CurItemList.Count ? CurItemList[i].Name : "";
+            // 슬롯과 텍스트 보이기
+            bool isExist = i < CurItemList.Count;
+            Slot[i].SetActive(isExist);
+            Slot[i].GetComponentInChildren<Text>().text = isExist ? CurItemList[i].Name : "";
+
+            if (isExist)
+            {
+                ItemImage[i].sprite = ItemSprite[AllItemList.FindIndex(x => x.Name == CurItemList[i].Name)];
+            }
         }
     }
 
@@ -52,6 +61,8 @@ public class InventoryManager : MonoBehaviour
     {
         string jdata = JsonConvert.SerializeObject(AllItemList);
         File.WriteAllText(Application.dataPath + "/Resources/MyItemText.txt", jdata);
+
+        TabClick(curType);
     }
     
     void Load()
