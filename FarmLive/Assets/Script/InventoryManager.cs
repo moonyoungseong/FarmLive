@@ -34,6 +34,7 @@ public class InventoryManager : MonoBehaviour
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4], row[5] == "TRUE"));
         }
 
+        //Save();
         Load();
     }
 
@@ -64,7 +65,7 @@ public class InventoryManager : MonoBehaviour
 
         TabClick(curType);
     }
-    
+
     void Load()
     {
         string jdata = File.ReadAllText(Application.dataPath + "/Resources/MyItemText.txt");
