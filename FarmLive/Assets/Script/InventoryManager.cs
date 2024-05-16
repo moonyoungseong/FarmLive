@@ -45,7 +45,7 @@ public class InventoryManager : MonoBehaviour
 
         for (int i = 0; i < Slot.Length; i++)
         {
-            // 슬롯과 텍스트 보이기
+            // 슬롯과 텍스트 보이기, 아이템 리스트와 동일할게 할당
             bool isExist = i < CurItemList.Count;
             Slot[i].SetActive(isExist);
             Slot[i].GetComponentInChildren<Text>().text = isExist ? CurItemList[i].Name : "";
