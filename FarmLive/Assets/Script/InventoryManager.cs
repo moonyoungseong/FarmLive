@@ -20,8 +20,8 @@ public class InventoryManager : MonoBehaviour
     public TextAsset ItemDatabase;  // 메모장 아이템
     public List<Item> AllItemList, MyItemList, CurItemList;
     public string curType = "Seed"; // 아이템 구분
-    public GameObject[] Slot;   // 슬롯 할당
-    public Image[] ItemImage;   // 슬롯에 이미지 칸
+    public GameObject[] Slot, UsingImage;   // 슬롯 할당
+    public Image[] TabImage, ItemImage;   // 슬롯에 이미지 칸
     public Sprite[] ItemSprite; // 아이템 이미지
 
     void Start()
